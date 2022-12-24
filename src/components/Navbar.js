@@ -46,8 +46,8 @@ export default function Navbar(props) {
           <label className={`form-check-label text-${props.mode === "light"? "dark":"light"}`} htmlFor="flexSwitchCheckDefault">Enable {props.mode === "light"? "Dark":"Light"} Mode</label>
         </div>
         <div className="dropdown">
-            <Link className="btn btn-secondary dropdown-toggle" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{background: 'linear-gradient(to right, rgb(217, 142, 3), rgb(90, 74, 255))'}}>
-                More Color Themes
+            <Link className="btn btn-secondary dropdown-toggle" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{background: 'linear-gradient(to right, rgb(255 172 0), rgb(29 255 224), rgb(108 0 222))', color: 'black'}}>
+                <strong>More Color Themes</strong>
             </Link>
 
             <ul className="dropdown-menu" style={{backgroundColor: bgColor2}}>
