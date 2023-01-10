@@ -4,7 +4,7 @@ React is really a cool thing to work with as it makes a lot of things convenient
 
 It helps me to keep my code note neat and clean as well as organize my files properly and reuse any components which I have built.
 
-So I highly recommend that everyone to learn React as it really great.
+So I highly recommend everyone to learn React as it really great.
 
 In this project I haven't used React Routing concepts as they are incompatible with Github Pages (You will get some issues while hosting this website on github if Routing is used)
 
