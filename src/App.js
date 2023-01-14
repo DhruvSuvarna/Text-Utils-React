@@ -1,14 +1,14 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-//import About from './components/About';
+import About from './components/About';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+   BrowserRouter as Router,
+   Routes,
+   Route
+ } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -28,13 +28,13 @@ function App() {
       if(mode === 'light') {
         setMode('dark');
         document.body.style.background = '#343a40'; document.body.style.color = 'white';
-        showAlert("Dark Mode has been Enabled","success"); document.title = "Text Utils - Dark Mode Enabled"
+        showAlert("Dark Mode has been Enabled","success"); document.title = "TextUtils - Dark Mode Enabled"
         /*setInterval(() => {document.title = "Text Utils is Amazing";}, 500); setInterval(() => {document.title = "Install Text Utils Now";}, 1000);*/
       }
       else{
         setMode('light');
         document.body.style.background = 'white'; document.body.style.color = 'black';
-        showAlert("Light Mode has been Enabled","success"); document.title = "Text Utils - Light Mode Enabled"
+        showAlert("Light Mode has been Enabled","success"); document.title = "TextUtils - Light Mode Enabled"
       }
   }
 
@@ -42,12 +42,12 @@ function App() {
     if(mode !== 'blue') {
       setMode('blue');
       document.body.style.background = modeColors.blue2; document.body.style.color = 'white';
-      showAlert("Blue Mode has been Enabled","success"); document.title = "Text Utils - Blue Mode Enabled"
+      showAlert("Blue Mode has been Enabled","success"); document.title = "TextUtils - Blue Mode Enabled"
     }
     if(mode === 'blue'){
       setMode('light');
       document.body.style.background = 'white'; document.body.style.color = 'black';
-      showAlert("Light Mode has been Enabled","success"); document.title = "Text Utils - Light Mode Enabled"
+      showAlert("Light Mode has been Enabled","success"); document.title = "TextUtils - Light Mode Enabled"
     }
   }
 
@@ -55,12 +55,12 @@ function App() {
     if(mode !== 'green') {
       setMode('green');
       document.body.style.background = modeColors.green2; document.body.style.color = 'white';
-      showAlert("Green Mode has been Enabled","success"); document.title = "Text Utils - Green Mode Enabled"
+      showAlert("Green Mode has been Enabled","success"); document.title = "TextUtils - Green Mode Enabled"
     }
     if(mode === 'green'){
       setMode('light');
       document.body.style.background = 'white'; document.body.style.color = 'black';
-      showAlert("Light Mode has been Enabled","success"); document.title = "Text Utils - Light Mode Enabled"
+      showAlert("Light Mode has been Enabled","success"); document.title = "TextUtils - Light Mode Enabled"
     }
   }
 
@@ -68,26 +68,25 @@ function App() {
     if(mode !== 'red') {
       setMode('red');
       document.body.style.background = modeColors.red2; document.body.style.color = 'white';
-      showAlert("Red Mode has been Enabled","success"); document.title = "Text Utils - Red Mode Enabled"
+      showAlert("Red Mode has been Enabled","success"); document.title = "TextUtils - Red Mode Enabled"
     }
     if(mode === 'red'){
       setMode('light');
       document.body.style.background = 'white'; document.body.style.color = 'black';
-      showAlert("Light Mode has been Enabled","success"); document.title = "Text Utils - Light Mode Enabled"
+      showAlert("Light Mode has been Enabled","success"); document.title = "TextUtils - Light Mode Enabled"
     }
   }
 
   return (
     <>
-    {/* <Router> */}
-      <Navbar title="Text Utils" aboutText="About Us" mode={mode} toggleMode={toggleMode} blueMode={bluetoggleMode} greenMode={greenMode} redMode={redMode} modeColors={modeColors}/>
+      <Router>
+      <Navbar title="TextUtils" aboutText="About Us" mode={mode} toggleMode={toggleMode} blueMode={bluetoggleMode} greenMode={greenMode} redMode={redMode} modeColors={modeColors}/>
       <Alert alert1={alert1} mode={mode}/>
-      <TextForm showAlert={showAlert} heading="Enter Your Text Below" mode={mode} modeColors={modeColors}/>
-      {/* <Routes> 
-        <Route exact path="/" element={}/>
-        <Route exact path="/about" element={<About/>}/> 
+      <Routes> 
+        <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try TextUtils, word counter, character counter, case conversion" mode={mode} modeColors={modeColors}/>}/>
+        <Route exact path="/about" element={<About mode={mode} modeColors={modeColors}/>}/> 
           </Routes> 
-    </Router>*/}
+    </Router>
     </>
   );
 }

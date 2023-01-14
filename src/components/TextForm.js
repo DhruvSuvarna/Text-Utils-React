@@ -35,17 +35,6 @@ export default function TextForm(props) {
     setText(event.target.value);
   }
 
-  function WordCount() {
-    let words;
-    if(text.length === 0) {
-      words = 0;
-    }
-    else {
-      words = text.split(' ').length;
-    }
-    return words;
-  }
-
   const [text, setText] = useState("");
 
   var bgColor;
@@ -57,6 +46,8 @@ export default function TextForm(props) {
     default: bgColor = 'white'; break;
   }
 
+  var wordCount = text.split(" ").filter(element => element.length !== 0).length;
+
   return (
     <>
         <div className="container my-3">
@@ -64,18 +55,18 @@ export default function TextForm(props) {
             <div className="mb-3">
               <textarea className="form-control" value={text} id="myBox" onChange={HandleOnChange} style={{backgroundColor: bgColor, color: props.mode==='light'?'black':'white'}} rows="8"></textarea>
             </div>
-            <button className="btn btn-primary mx-1" onClick={HandleUpClick}>Convert to Upper Case</button>  
-            <button className="btn btn-success mx-1" onClick={HandleDownClick}>Convert to Lower Case</button>  
-            <button className="btn btn-dark mx-1" onClick={HandleCapClick}>Capitalize</button>  
-            <button className="btn btn-warning mx-1" onClick={speak}>Speak</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={HandleUpClick}>Convert to Upper Case</button>  
+            <button className="btn btn-success mx-1 my-1" onClick={HandleDownClick}>Convert to Lower Case</button>  
+            <button className="btn btn-dark mx-1 my-1" onClick={HandleCapClick}>Capitalize</button>  
+            <button className="btn btn-warning mx-1 my-1" onClick={speak}>Speak</button>
         </div>
 
         <div className="container my-3">
           <h1>Your Text Summary</h1>
-          <p>{WordCount()} words and {text.length} characters</p>
-          <p>{0.008*WordCount()} Minutes Read</p>
+          <p>{wordCount} words and {text.length} characters</p>
+          <p>{0.008*wordCount} Minutes Read</p>
           <h2>Preview</h2>
-          <p>{text.length === 0? "Enter something in the above Textbox to preview it here":text}</p>
+          <p>{wordCount === 0? "Enter something in the above Textbox to preview it here":text}</p>
         </div>
     </>
   )
