@@ -46,7 +46,7 @@ export default function TextForm(props) {
     default: bgColor = 'white'; break;
   }
 
-  var wordCount = text.split(" ").filter(element => element.length !== 0).length;
+  var wordCount = text.split(/\s+/).filter(element => element.length !== 0).length;
 
   return (
     <>
