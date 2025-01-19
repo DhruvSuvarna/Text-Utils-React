@@ -1,4 +1,4 @@
 # Auto detect text files and perform LF normalization
-*.html linguist-language=React.js
-*.js linguist-language=React.js
-*.css linguist-language=React.js
+*.html linguist-language=React
+*.js linguist-language=React
+*.css linguist-language=React
